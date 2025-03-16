@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptoms Care Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Symptoms Care Tracker (SCT)</h1>
+    </header>
+    <p id="loading">Analyzing symptoms... Please wait.</p>
+    
+    <main>
+        <section id="symptom-form">
+            <h2>Log Your Symptoms</h2>
+            <form id="symptomEntryForm">
+                <label for="symptoms">Describe your symptoms:</label>
+                <textarea id="symptoms" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <section id="response">
+            <h2>Preliminary Assessment</h2>
+            <p id="assessment-result">Your assessment will appear here.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
