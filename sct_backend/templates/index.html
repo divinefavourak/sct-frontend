@@ -15,12 +15,16 @@
     <main>
         <section id="symptom-form">
             <h2>Log Your Symptoms</h2>
-            <form id="symptomEntryForm">
+            <form id="symptomEntryForm" method="post">
+                {% csrf_token %}
                 <label for="symptoms">Describe your symptoms:</label>
                 <textarea id="symptoms" required></textarea>
                 
                 <button type="submit">Submit</button>
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+
             </form>
+            
         </section>
 
         <section id="response">
@@ -28,7 +32,10 @@
             <p id="assessment-result">Your assessment will appear here.</p>
         </section>
     </main>
-
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>

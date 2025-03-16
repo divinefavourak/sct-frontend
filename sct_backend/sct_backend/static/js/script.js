@@ -26,4 +26,15 @@ async function getAIResponse(symptoms) {
     const data = await response.json();
     return data.prediction || "AI could not determine the issue.";
 }
+function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
 
+fetch("/", {
+    method: "POST",
+    headers: {
+        "X-CSRFToken": getCSRFToken(),
+        "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ example: "Test data" }),
+});
